@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url(null.css);
+
+/* Стили */
+
+body{
+	background-color: #FDFFFC;
+}
+
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, #FDFFFC 0%, #FF9F1C 100%);
+	opacity: 0.2;
+}
+
+.images{
+	position: absolute;
+	background-image: url("../img/WOMAN.svg"), 
+	url("../img/TAXI\ DRIVER.svg"),
+	url("../img/SPOTLIGHT.svg"),
+	url("../img/AIRPORT.svg");
+	background-repeat: no-repeat;
+	background-position: 0 100%, 100% 100%, 100% 100%, 100% 50%;
+	width: 100vw;
+	height: 100vh;
+}
+
+.content{
+	position: absolute;
+	top: 8%;
+	left: 17%;
+	width: 36vw;
+	height: 40vh;
+}
+
+.title{
+
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 11vh;
+	line-height: 16vh;
+	color: #010B14;
+}
+
+.content__info{
+	width: 88%;
+}
+
+.content__info_description{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 3vh;
+	line-height: 4vh;
+	color: #010B14;
+	
+}
+
+.content__info_start-button{
+	margin-top: 2.5vh;
+	position: absolute;
+	right: 0;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 3vh;
+	line-height: 4vh;
+	color: #FDFFFC;
+	padding: 2.5vh 8vh;
+	background-color: #FF9F1C;
+	border-radius: 50px;
+}
+
+.autorization{
+	visibility: hidden;
+}
+
+.registration{
+	visibility: hidden;
+}
+
+.reset-password{
+	visibility: hidden;
+}
+
+.popup-bg{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.popup{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #FDFFFC;
+	border-radius: 30px 0px 30px 30px;
+}
+
+.popup__close{
+	position: absolute;
+	top: 0.7vh;
+	right: 0.7vh;
+}
+
+.popup__content{
+	padding: 1.8vh 5.5vh;
+}
+
+.choice {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343434;
+    border-radius: 30px;
+    width: 35vw;
+    height: 6vh;
+}
+
+.active {
+    background-color: #FF9F1C;
+    border-radius: 30px;
+    height: 6vh;
+    width: 20vw;
+    left: 17vw;
+}
+
+.active-auto{
+	float: left;
+}
+
+.active-reg{
+	float: right;
+}
+
+.choice__auto {
+    position: absolute;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2vh;
+    color: #FDFFFC;
+    z-index: 100;
+    top: 3.8vh;
+    left: 6vw;
+}
+
+.choice__reg {
+    position: absolute;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2vh;
+    color: #FDFFFC;
+    top: 3.8vh;
+    left: 27vw;
+    z-index: 100;
+}
+
+.input-form{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 3vh;
+	color: #010B14;
+	border: #010B14 3px solid;
+	border-radius: 30px;
+	padding: 1.5vh;
+	width: 62vh;
+	margin-top: 2vh;
+}
+
+.autorization__buttons{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2vh;
+}
+
+.enter{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 3vh;
+	color: #FDFFFC;
+	padding: 1vh 5vh;
+	background-color: #FF9F1C;
+	border-radius: 30px;
+}
+
+.skip{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 3vh;
+	color: #FDFFFC;
+	padding: 1vh 2vh;
+	background-color: #343434;
+	border-radius: 30px;
+}
+
+.driver{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 2.5vh;
+	color: #010B14;
+}
+
+.checkbox{
+	background-color: #343434;
+	width: 2vh;
+	height: 2vh;
+	margin: 0.7vh;
+}
+
+.reset-button{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 2.5vh;
+	color: #010B14;
+	margin-bottom: 5.5vh;
+}
+
+.reset-password__title{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 3vh;
+	color: #010B14;
+}
+
+.reset-password__buttons{
+	margin-top: 3vh;
+}
+
+.send{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2vh;
+	line-height: 3vh;
+	color: #FDFFFC;
+	padding: 1vh 2.5vh;
+	background-color: #FF9F1C;
+	border-radius: 30px;
+	margin-top: -3vh;
+}
+
+.reset-password__description{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.5vh;
+	line-height: 2vh;
+	color: #010B14;
+	width: 21vw;
+	margin-top: 3vh;
+}
