@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="images"></div>
+    <div class="content">
+      <h1 class="title">Такси</h1>
+      <div class="content__info">
+        <p class="content__info_description">
+          Заказывайте такси всего в пару кликов! Быстрая подача, низкие цены,
+          комфортная поездка!
+        </p>
+        <a href="#" class="content__info_start-button">Начать</a>
+      </div>
+    </div>
+    <!-- Попап авторизация -->
+    <div class="popup-bg autorization">
+      <div class="popup">
+        <a href="#">
+          <img src="assets/icon/Cross.svg" alt="Cross" class="popup__close" />
+        </a>
+        <div class="popup__content">
+          <div class="choice">
+            <div class="choice__auto">Авторизация</div>
+            <div class="choice__reg">Регистрация</div>
+            <div class="active active-auto"></div>
+          </div>
+          <form action="#" method="get">
+            <input id="inpemail" type="text" class="input-form" placeholder="Введите email" />
+            <br />
+            <input
+              id="inppass"
+              type="password"
+              class="input-form"
+              placeholder="Введите пароль"
+            />
+          </form>
+          <div class="autorization__buttons">
+            <a href="#" class="enter" id="authbut">Войти</a>
+            <a href="#" class="skip" id="skipbut">Пропустить</a>
+            <label for="#">
+              <p class="driver">
+                <input type="checkbox" id="indriver" class="checkbox" />Я
+                водитель
+              </p>
+            </label>
+          </div>
+          <br />
+          <a href="#" class="reset-button" id="resetpass">Сбросить пароль</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup-bg registration">
+      <div class="popup">
+        <a href="#">
+          <img src="assets/icon/Cross.svg" alt="Cross" class="popup__close" />
+        </a>
+        <div class="popup__content">
+          <div class="choice">
+            <div class="choice__auto">Авторизация</div>
+            <div class="choice__reg">Регистрация</div>
+            <div class="active active-reg"></div>
+          </div>
+          <form action="#" method="get">
+            <input
+              type="text"
+              class="input-form"
+              id="inpemailreg"
+              placeholder="Введите email"
+            />
+            <br />
+            <input
+              type="password"
+              class="input-form"
+              id="inppassreg1"
+              placeholder="Введите пароль"
+            />
+            <br />
+            <input
+              type="password"
+              class="input-form"
+              id="inppassreg2"
+              placeholder="Подтвердите пароль"
+            />
+          </form>
+          <div class="autorization__buttons">
+            <a href="#" class="enter" id="regbut">Войти</a>
+            <a href="#" class="skip" id="skipbut">Пропустить</a>
+            <label for="#">
+              <p class="driver">
+                <input type="checkbox" class="checkbox" id="indriverreg" />Я
+                водитель
+              </p>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-bg reset-password">
+      <div class="popup">
+        <a href="#">
+          <img src="assets/icon/Cross.svg" alt="Cross" class="popup__close" />
+        </a>
+        <div class="popup__content">
+          <p class="reset-password__title">
+            Чтобы сбросить пароль введите свой e-mail
+          </p>
+          <form action="#" method="get">
+            <input id="inpemailpasreset" type="text" class="input-form" placeholder="Введите email" />
+          </form>
+          <div class="reset-password__buttons">
+            <a href="#" class="send" id="authbutpassres">Отправить</a>
+          </div>
+          <p class="reset-password__description">
+            При нажатии на кнопку “отправить” вам на почту придет письмо, в
+            котором необходимо перейти по ссылке. После сброса пароля необходимо
+            заново зарегистрироваться на сайте.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="assets/libs/jquery/jquery.js"></script>
+    <script src="assets/scriptsDAL/authorization2server.js"></script>
+    <script src="assets/scriptsDAL/passreset2server.js"></script>
+    <script src="assets/scriptsDAL/registration2server.js"></script>
+    <script src="assets/scriptsUI/authorization.js"></script>
+    <script src="assets/scriptsUI/registration.js"></script>
+    <script src="assets/scriptsUI/passreset.js"></script>
+  </body>
+</html>
