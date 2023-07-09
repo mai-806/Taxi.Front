@@ -15,9 +15,9 @@
                 <div class="order-info">
                     <div class="big-button">
                         <form action="#" method="get">
-                            <input type="text" class="from-to" placeholder="Откуда">
+                            <input type="text" class="from-to" id="first" placeholder="Откуда">
                             <br />
-                            <input type="text" class="from-to" placeholder="Куда">
+                            <input type="text" class="from-to" id="second" placeholder="Куда">
                         </form>
                         <img src="../icon/Road.svg" class="road" alt="Road">
                     </div>
@@ -27,7 +27,7 @@
                     </span>
                 </div>
                 <div class="order-part">
-                    <a href="#" class="order-part__button">Заказать</a>
+                    <a href="#" class="order-part__button" id="startdrivebutt">Заказать</a>
                     <div class="order-part__description">При заказе такси вы соглашаетесь с Правилами пользования.</div>
                 </div>
             </div>
@@ -83,5 +83,8 @@
             </div>
         </div>
     </div>
+    <script src="assets/libs/jquery/jquery.js"></script>
+    <script src="assets/scriptsDAL/mapacceess2server.js"></script>
+    <script src="assets/scriptsUI/mapaccess.js"></script>
 </body>
 </html>
