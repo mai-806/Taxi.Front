@@ -18,3 +18,18 @@ function PassReset(email) {
     },
   });
 }
+
+function GetUserResetData() {
+  const promise = $.ajax({
+    url: "тестовый адрес",
+    dataType: "json",
+    success: function(data) {
+      console.log("JSON файл успешно получен:", data);
+      // Дальнейшая обработка полученных данных
+    },
+    error: function(xhr, status, error) {
+      console.log("Произошла ошибка при получении JSON файла:", error);
+    }
+  });
+  return promise;
+}

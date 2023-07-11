@@ -8,12 +8,30 @@
 </head>
 <body>
     <div class="bg"></div>
-    <div class="map"></div>
+    <div class="map">
+        <div id="Map" style="height:100%; width:100%"></div>
+        <script src="/assets/scriptsDAL/OpenLayers.js"></script>
+        <script>
+            var lat            = 47.35387;
+            var lon            = 8.43609;
+            var zoom           = 18;
+            var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+            var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+            var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+            map = new OpenLayers.Map("Map");
+            var mapnik         = new OpenLayers.Layer.OSM();
+            map.addLayer(mapnik);
+            var markers = new OpenLayers.Layer.Markers( "Markers" );
+            map.addLayer(markers);
+            markers.addMarker(new OpenLayers.Marker(position));
+            map.setCenter(position, zoom);
+        </script>
+    </div>
     <div class="panel">
         <div class="content">
             <div class="order-menu">
                 <div class="order-info">
-                    <div class="big-button">
+                    <div class="order-info__container">
                         <form action="#" method="get">
                             <input type="text" class="from-to" id="first" placeholder="Откуда">
                             <br />
@@ -83,8 +101,9 @@
             </div>
         </div>
     </div>
-    <script src="assets/libs/jquery/jquery.js"></script>
-    <script src="assets/scriptsDAL/mapacceess2server.js"></script>
-    <script src="assets/scriptsUI/mapaccess.js"></script>
+    <script src="/assets/libs/jquery/jquery.js"></script>
+    <script src="/assets/scriptsDAL/mapacceess2server.js"></script>
+    <script src="/assets/scriptsUI/mapaccess.js"></script>
+    
 </body>
 </html>
