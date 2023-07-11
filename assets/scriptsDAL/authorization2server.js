@@ -24,3 +24,18 @@ function makeSendAutResponse2server(email, password, isDriver) {
 function SkipScreen() {
   window.location.href = "https://www.google.com/";
 }
+
+function GetUserAuthData() {
+  const promise = $.ajax({
+    url: "тестовый адрес",
+    dataType: "json",
+    success: function(data) {
+      console.log("JSON файл успешно получен:", data);
+      // Дальнейшая обработка полученных данных
+    },
+    error: function(xhr, status, error) {
+      console.log("Произошла ошибка при получении JSON файла:", error);
+    }
+  });
+  return promise;
+}

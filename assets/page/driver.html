@@ -1,81 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Driver screen</title>
-    <link rel="stylesheet" href="../css/driver.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/driver.css" />
+  </head>
+  <body>
     <div class="bg"></div>
-    <div class="map"></div>
-    <div class="panel">
-        <div class="content">
-            <div class="driver-menu">
-                <a href="#" class="big-button">Начать</a>
-                <div class="driver-menu__description">Нажмите на кнопку и система
-                    начнет искать клиентов</div>
-            </div>
-            <div class="client-search">
-                <p class="description">Пожалуйста подождите, мы ищем ближайшего клиента...</p>
-                <img src="../icon/Search.svg" alt="Search">
-                <div class="right-pos-cancel">
-                    <a href="#" class="cancel">Отмена</a>
-                </div>
-            </div>
-            <div class="driver-decision">
-                <div class="driver-info">
-                    <div class="driver-info__from-to">
-                        <div class="driver-info__address">
-                            <p class="from-to">Откуда</p>
-                            <p class="from-to">Куда</p>
-                        </div>
-                        <img src="../icon/Road.svg" class="road" alt="Road">
-                    </div>
-                    <span class="price">
-                        <p class="description">Стоимость поездки составляет</p>
-                        <p class="cost">100 рублей</p>
-                    </span>
-                </div>
-                <div class="driver-part">
-                    <a href="#" class="driver-part__big-button">Поехали</a>
-                    <div class="driver-part__description">Нажмите “поехали”, как только
-                        клиент сядет в машину</div>
-                    <div class="right-pos-cancel">
-                        <a href="#" class="cancel">Отмена</a>
-                    </div>
-                </div>
-            </div>
-            <div class="driver-go">
-                <div class="driver-go__containter">
-                    <div class="driver-go__title">
-                        <p class="description">До конца поездки осталось</p>
-                        <p class="time">5 минут</p>
-                    </div>
-                    <p class="from-to">Куда</p>
-                    <span class="price">
-                        <p class="description">Стоимость поездки составляет</p>
-                        <p class="cost">100 рублей</p>
-                    </span>
-                </div>
-                <a href="#" class="big-button">Завершить</a>
-            </div>
-            <div class="driver-final">
-                <div class="driver-final__info">
-                    <div class="description">Вы приехали!</div>
-                    <span class="price">
-                        <p class="description">Стоимость поездки составляет</p>
-                        <p class="cost">100 рублей</p>
-                    </span>
-                </div>
-                <div class="driver-final__buttons">
-                    <a href="#" class="big-button">Начать</a>
-                    <div class="bottom-pos-cancel">
-                        <a href="#" class="cancel">Выйти</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="map">
+        <div id="Map" style="height:100%; width:100%"></div>
+        <script src="/assets/scriptsDAL/OpenLayers.js"></script>
+        <script>
+            var lat            = 47.35387;
+            var lon            = 8.43609;
+            var zoom           = 18;
+            var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+            var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+            var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+            map = new OpenLayers.Map("Map");
+            var mapnik         = new OpenLayers.Layer.OSM();
+            map.addLayer(mapnik);
+            var markers = new OpenLayers.Layer.Markers( "Markers" );
+            map.addLayer(markers);
+            markers.addMarker(new OpenLayers.Marker(position));
+            map.setCenter(position, zoom);
+        </script>
     </div>
-</body>
+    <div class="panel">
+      <div class="content">
+        <div class="driver-menu">
+          <a href="#" class="big-button">Начать</a>
+          <div class="driver-menu__description">
+            Нажмите на кнопку и система начнет искать клиентов
+          </div>
+        </div>
+        <div class="client-search">
+          <p class="description">
+            Пожалуйста подождите, мы ищем ближайшего клиента...
+          </p>
+          <img src="../icon/Search.svg" alt="Search" />
+          <div class="right-pos-cancel">
+            <a href="#" class="cancel">Отмена</a>
+          </div>
+        </div>
+        <div class="driver-decision">
+          <div class="driver-info">
+            <div class="driver-info__from-to">
+              <div class="driver-info__address">
+                <p class="from-to">Откуда</p>
+                <p class="from-to">Куда</p>
+              </div>
+              <img src="../icon/Road.svg" class="road" alt="Road" />
+            </div>
+            <span class="price">
+              <p class="description">Стоимость поездки составляет</p>
+              <p class="cost">100 рублей</p>
+            </span>
+          </div>
+          <div class="driver-part">
+            <a href="#" class="driver-part__big-button">Поехали</a>
+            <div class="driver-part__description">
+              Нажмите “поехали”, как только клиент сядет в машину
+            </div>
+            <div class="right-pos-cancel">
+              <a href="#" class="cancel">Отмена</a>
+            </div>
+          </div>
+        </div>
+        <div class="driver-go">
+          <div class="driver-go__containter">
+            <div class="driver-go__title">
+              <p class="description">До конца поездки осталось</p>
+              <p class="time">5 минут</p>
+            </div>
+            <p class="from-to">Куда</p>
+            <span class="price">
+              <p class="description">Стоимость поездки составляет</p>
+              <p class="cost">100 рублей</p>
+            </span>
+          </div>
+          <a href="#" class="big-button">Завершить</a>
+        </div>
+        <div class="driver-final">
+          <div class="driver-final__info">
+            <div class="description">Вы приехали!</div>
+            <span class="price">
+              <p class="description">Стоимость поездки составляет</p>
+              <p class="cost">100 рублей</p>
+            </span>
+          </div>
+          <div class="driver-final__buttons">
+            <a href="#" class="big-button">Начать</a>
+            <div class="bottom-pos-cancel">
+              <a href="#" class="cancel">Выйти</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
